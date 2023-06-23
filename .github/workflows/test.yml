@@ -16,10 +16,10 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
    unit-test:
-     uses: ./.github/workflows/unit-test.yml@main
+     uses: ./.github/workflows/unit-test.yml
 
    deployment-test:
-     uses: ./.github/deploy-test.yml@main
+     uses: ./.github/deploy-test.yml
 
    collect:
      needs:
