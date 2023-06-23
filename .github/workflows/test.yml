@@ -19,7 +19,7 @@ jobs:
      uses: ./.github/workflows/unit-test.yml
 
    deployment-test:
-     uses: ./.github/deploy-test.yml
+     uses: ./.github/workflows/deploy-test.yml
 
    collect:
      needs:
