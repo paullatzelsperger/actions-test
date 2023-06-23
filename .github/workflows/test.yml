@@ -27,9 +27,6 @@ jobs:
       - deployment-test
      runs-on: ubuntu-latest
      steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
       # Runs a single command using the runners shell
       - name: 'Master test job'
         run: "all test jobs have run by now"
