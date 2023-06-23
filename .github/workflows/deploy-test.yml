@@ -21,4 +21,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run deployment tests
-        run: "Running deployment tests"
+        run: echo "Running deployment tests"

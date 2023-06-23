@@ -29,5 +29,5 @@ jobs:
      steps:
       # Runs a single command using the runners shell
       - name: 'Master test job'
-        run: "all test jobs have run by now"
+        run: echo "all test jobs have run by now"
        
