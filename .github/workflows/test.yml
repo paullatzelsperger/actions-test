@@ -15,16 +15,16 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-   job1:
-     uses: paullatzelsperger/actions-test/.github/workflows/unit-test.yml@main
+   unit-test:
+     uses: ./.github/workflows/unit-test.yml@main
 
-   job2:
-     uses: paullatzelsperger/actions-test/.github/deploy-test.yml@main
+   deployment-test:
+     uses: ./.github/deploy-test.yml@main
 
-   job3:
+   collect:
      needs:
-      - job1
-      - job2
+      - unit-test
+      - deployment-test
      runs-on: ubuntu-latest
      steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
