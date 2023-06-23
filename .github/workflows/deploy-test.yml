@@ -11,14 +11,30 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  prepare-cluster:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare KinD
+        run: echo "preparing KinD"
+
+  deploy-test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    needs: [prepare-cluster]
     steps:
-
-      # Runs a single command using the runners shell
       - name: Run deployment tests
+        run: echo "Running deployment tests"
+
+  deploy-test-azure:
+    runs-on: ubuntu-latest  
+    needs: [prepare-cluster]
+    steps:
+      - name: Run deployment tests azure
+        run: echo "Running deployment tests"
+  
+  deploy-test-inmem:
+    runs-on: ubuntu-latest  
+    needs: [prepare-cluster]
+    steps:
+      - name: Run deployment tests inmem
         run: echo "Running deployment tests"
